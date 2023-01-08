@@ -4,7 +4,7 @@ import re
 import sys
 import urllib.request
 from signal import signal, SIGINT
-
+import shutil
 import requests
 from art import text2art
 from bs4 import BeautifulSoup
@@ -18,7 +18,8 @@ reset = attr('reset')
 
 searching_color = fg("green")
 
-rows, columns = os.popen('stty size', 'r').read().split()
+# rows, columns = os.popen('stty size', 'r').read().split()
+rows,columns=shutil.get_terminal_size()
 
 version = "1.0.0"
 
